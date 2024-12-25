@@ -2,9 +2,9 @@ import pandas as pd
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_community.document_loaders import DirectoryLoader
 from tqdm import tqdm
-from local_llm_model import get_ans
+from llama31b import Llama321b
 
-
+model= Llama321b()
 def generate_qa(name,contents):
     result = []
     qa_dir = f"data/database_dir/{name}/qa"
@@ -23,7 +23,7 @@ the format is as follows:
 {{"question":"xxx","answer":"xxx"}}
 In English, the extracted Q&A content is:"""
 
-        answers = get_ans(prompt)
+        answers = model.get_ans(prompt)
         answers = answers.split("\n")
 
         for answer in answers:
