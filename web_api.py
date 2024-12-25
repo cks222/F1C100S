@@ -95,9 +95,7 @@ if __name__ == "__main__":
 
     authorized_users = [("admin", "123456"), ("monica", "pass456")]
 
-    with gr.Blocks(css=".dataframe-cell { white-space: normal; word-wrap: break-word; }") as glass:
-
-
+    with gr.Blocks(css=".dataframe-cell { white-space: normal; word-wrap: break-word; }td>div>span{white-space: pre-wrap;}tr:nth-child(2n)>td{background-color:#d0e5f5;}") as glass:
         with gr.Tab("Knowledge base management"):
             knowledge_names = gr.Dropdown(choices=database_namelist, label="Knowledge base selection", value=database_namelist[0])
             context = gr.DataFrame(pd.DataFrame(database_list[0].document.contents, columns=["context"]), max_height=800)
