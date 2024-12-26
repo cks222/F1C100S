@@ -1,18 +1,19 @@
 from zhipuai import ZhipuAI
 from typing import Callable
-from azure.identity import DefaultAzureCredential
 from openai import AzureOpenAI
+'''
+from azure.identity import DefaultAzureCredential
 from azure.core.credentials import TokenCredential
 from azure.core.pipeline.policies import BearerTokenCredentialPolicy
 from azure.core.pipeline import PipelineRequest, PipelineContext
-from azure.core.rest import HttpRequest
+from azure.core.rest import HttpRequest'''
 import logging
 import fnmatch
 import os
 import re
-import tiktoken
+#import tiktoken
 
-
+'''
 def _make_request() -> PipelineRequest[HttpRequest]:
     return PipelineRequest(HttpRequest("CredentialWrapper", "https://fakeurl"), PipelineContext(None))
 
@@ -72,8 +73,9 @@ def get_ans2(prompt):
         ans += trunk.choices[0].delta.content
     ans = ans.replace("\n\n", "\n")
     return ans
-
+'''
 def get_ans(prompt):
+    return "get_ans"
     # 需要修改为自己的智谱的api_key
     print(prompt)
     client = openai_client('sing')
