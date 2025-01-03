@@ -28,3 +28,5 @@ pip install langchain_text_splitters
 pip install sentence_transformers
 pip install langchain_community
 pip install zhipuai
+pip install streamlit 
+pip install streamlit_aggrid
